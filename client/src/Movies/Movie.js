@@ -27,8 +27,9 @@ export default class Movie extends Component {
   };
   // Uncomment this code when you're ready for the stretch problems
   componentWillReceiveProps(newProps) {
-    if (this.props.match.params.id !== newProps.match.params.id) {
-      this.fetchMovie(newProps.match.params.id);
+    console.log('newProps', newProps, this.props)
+    if (this.props.id === newProps.id) {
+      this.fetchMovie(newProps.id);
     }
   }
 
@@ -38,7 +39,6 @@ export default class Movie extends Component {
   }
 
   render() {
-    console.log(this.props)
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
     }
