@@ -9,6 +9,7 @@ const Movie = (props) => {
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
+
     fetchMovie = id => {
       axios
         .get(`http://localhost:5000/api/movies/${id}`)
@@ -20,6 +21,7 @@ const Movie = (props) => {
         });
     };
   });
+
 
   // Uncomment this only when you have moved on to the stretch goals
   // saveMovie = () => {
@@ -38,10 +40,12 @@ const Movie = (props) => {
         <h2>{title}</h2>
         <div className="movie-director">
           Director: <em>{director}</em>
+
         </div>
         <div className="movie-metascore">
           Metascore: <strong>{metascore}</strong>
         </div>
+
         <h3>Actors</h3>
 
         {stars.map(star => (
